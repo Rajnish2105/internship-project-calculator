@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Added for better box-sizing */
+}
+
+html {
+    font-family: "Inconsolata", monospace;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(0, 0%, 90%);
+    color: white;
+    /* Set common text color */
+}
+
+/* My calculator heading */
+h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 0.5rem;
+
+    /* making that linear gradient color appear on the heading */
+    background: linear-gradient(to right, aqua, pink, skyblue);
+    background-clip: text;
+    color: transparent;
+}
+
+#Calculator {
+    width: 500px;
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* basic display for calculator display */
+#Calculator-Display {
+    background-color: hsl(0, 0%, 20%);
+    width: 100%;
+    height: fit-content;
+    min-height: 80px;
+    padding: 10px 20px;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: start;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    color: inherit;
+    /* Inherit color from body */
+}
+
+/* custom scrollbar for display if numbers get out of the view */
+#Calculator-Display::-webkit-scrollbar {
+    height: 5px;
+}
+
+#Calculator-Display::-webkit-scrollbar-track {
+    background: transparent;
+    width: 2px;
+}
+
+#Calculator-Display::-webkit-scrollbar-thumb {
+    background: #888;
+    height: 5px;
+    border-radius: 6px;
+}
+
+/* div holding all simple buttns */
+#Calculator-buttons {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+    justify-items: center;
+    padding-top: 5px;
+}
+
+/* all buttons basic css */
+button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: none;
+    background-color: hsl(0, 0%, 30%);
+    outline: 0;
+    color: inherit;
+    /* Inherit color from body */
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: hsl(0, 0%, 40%);
+}
+
+button:active {
+    background-color: hsl(0, 0%, 50%);
+}
+
+/* operator bttons css */
+.Operator-btn {
+    background-color: hsl(39, 100%, 50%);
+}
+
+.Operator-btn:hover {
+    background-color: hsl(39, 100%, 65%);
+}
+
+.Operator-btn:active {
+    background-color: hsl(39, 100%, 75%);
+}
+
+/* complex calculator buttons div*/
+.Additional-btns {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 20px;
+    gap: 10px;
+    justify-items: center;
+    margin-bottom: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+/* css for simple or complex calculator text */
+.calculator-type {
+    font-size: 2rem;
+    padding: 5px 30px;
+    opacity: 0.3;
+    cursor: pointer;
+    text-align: center;
+}
+.calculator-type.active {
+    opacity: 1;
+    color: hsl(39, 100%, 50%);
+}
+
+
+/* styles for tablet view */
+@media (max-width: 800px) and (min-width: 500px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    #Calculator-Display {
+        height: 50px;
+    }
+
+    #Calculator {
+        width: 450px;
+        margin: auto;
+    }
+
+    .calculator-type {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    button {
+        width: 70px;
+        height: 70px;
+        font-size: 1.7rem;
+    }
+}
+
+/* style for mobile view */
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #Calculator-Display {
+        min-height: fit-content;
+        height: 50px;
+    }
+
+    #Calculator {
+        width: 90%;
+        margin: auto;
+    }
+
+    #Calculator-Display {
+        font-size: 2rem;
+    }
+
+    .calculator-type {
+        font-size: 1.05rem;
+    }
+
+    button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    #Calculator-buttons {
+        justify-content: center;
+    }
+
+    .Additional-btns {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 20px;
+        padding-top: 5px;
+        justify-items: center;
+        padding-bottom: 0;
+    }
+}

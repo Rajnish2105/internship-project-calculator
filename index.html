@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- calculator icon on the Tab -->
+    <link rel="shortcut icon" href="Calculator.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+
+    <!-- Css file imported-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="Calculator">
+        <h1>My Calculator</h1>
+        <div id="Calculator-Display"></div>
+        <p class="calculator-type">Calculator Type:
+            <span id="complex">
+                Simple
+            </span>
+        </p>
+        <!-- buttons for complex calculations -->
+        <div class="Additional-btns">
+            <button onclick="operationSqr()" class="Operator-btn">x²</button>
+            <button onclick="operationRoot()" class="Operator-btn">√x</button>
+            <button onclick="factorial()" class="Operator-btn">x!</button>
+            <button onclick="operationlog()" class="Operator-btn">log</button>
+        </div>
+
+        <!-- All the calculator buttons -->
+        <div id="Calculator-buttons">
+
+            <button onclick="clearDisplay()" class="Operator-btn">AC</button>
+            <button onclick="clearCurrent()" class="Operator-btn">C</button>
+            <button onclick="appendToDisplay('%')" class="Operator-btn">%</button>
+            <button onclick="appendToDisplay('/')" class="Operator-btn">÷</button>
+
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('*')" class="Operator-btn">x</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('-')" class="Operator-btn">-</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('+')" class="Operator-btn">+</button>
+
+            <button onclick="operationInverse()" class="Operator-btn">+/-</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')" class="Operator-btn">.</button>
+            <button onclick="calculate()" class="Operator-btn">=</button>
+        </div>
+    </div>
+
+    <!-- javascript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
